@@ -13,11 +13,11 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import { useNavbar } from "./Navbar.hooks";
 
-const Navbar: FC = () => {
+export const Navbar: FC = () => {
   const { closeDrawer, openDrawer, isDrawerOpen } = useNavbar();
 
   return (
-    <AppBar elevation={0} position="fixed">
+    <AppBar elevation={0} position="sticky">
       <Toolbar>
         <IconButton size="large" onClick={openDrawer}>
           <MenuIcon sx={{ color: "white" }} />
@@ -39,5 +39,3 @@ const Navbar: FC = () => {
     </AppBar>
   );
 };
-
-export default Navbar;
