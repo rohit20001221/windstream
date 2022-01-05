@@ -1,35 +1,36 @@
 import { FC } from "react";
-import { Grid } from "@mui/material";
-import { colors } from "@mui/material";
+import { Box } from "@mui/material";
 import { SensorDataCard } from "../components/SensorDataCard";
 
 export const Home: FC = () => {
   return (
-    <Grid container gap={1} sx={{ padding: 2 }}>
-      <Grid item xs={3}>
+    <Box>
+      {/* Display the sensor data */}
+      <Box className="h-10 p-3 grid gap-2 grid-cols-3">
         <SensorDataCard
-          value={100}
-          title={"Temperature"}
+          className={"bg-blue-500 text-white font-bold"}
+          value={200}
           units={"*C"}
-          color={colors.blue[500]}
+          title={"Temperature"}
         />
-      </Grid>
-      <Grid item xs={3}>
         <SensorDataCard
-          value={134}
-          units={"watts"}
-          title={"Power Generated"}
-          color={colors.red[500]}
+          className={"bg-yellow-500 text-yellow-100 font-bold"}
+          value={120}
+          units={"Hz"}
+          title={"Frequency"}
         />
-      </Grid>
-      <Grid item xs={3}>
         <SensorDataCard
-          value={50}
-          units={"rmp"}
-          title={"RPM"}
-          color={colors.green[500]}
+          className={"bg-red-500 text-red-200 font-bold"}
+          value={111}
+          units={"Watts"}
+          title={"Power"}
         />
-      </Grid>
-    </Grid>
+      </Box>
+      {/* Display the graphs */}
+      <Box className="grid gap-2 grid-cols-2">
+        {/* Bar graph */}
+        {/* Pie chart */}
+      </Box>
+    </Box>
   );
 };
