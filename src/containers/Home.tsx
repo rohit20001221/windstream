@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Box } from "@mui/material";
+import { Box, colors } from "@mui/material";
 import { SensorDataCard } from "../components/SensorDataCard";
 import { Line, Bar } from "react-chartjs-2";
 
@@ -40,6 +40,8 @@ export const Home: FC = () => {
                   data: [10, 20, 30, 14, 15],
                   barThickness: 40,
                   label: "power generated",
+                  borderColor: colors.blue[400],
+                  backgroundColor: colors.blue[300],
                 },
               ],
             }}
@@ -56,6 +58,8 @@ export const Home: FC = () => {
                 {
                   data: [10, 20, 30, 14, 15],
                   label: "revenue generated",
+                  borderColor: colors.blue[400],
+                  backgroundColor: colors.blue[300],
                 },
               ],
             }}
