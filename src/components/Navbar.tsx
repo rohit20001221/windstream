@@ -22,7 +22,7 @@ export const Navbar: FC = () => {
         <IconButton size="large" onClick={openDrawer}>
           <MenuIcon sx={{ color: "white" }} />
         </IconButton>
-        <Typography variant="h6">Wind stream</Typography>
+        <Typography variant="h6">wind stream</Typography>
       </Toolbar>
 
       <Drawer anchor="left" open={isDrawerOpen} onClose={closeDrawer}>
