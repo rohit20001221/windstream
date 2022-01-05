@@ -1,13 +1,14 @@
 import { FC } from "react";
-import { Box, colors } from "@mui/material";
+import { colors, Stack, Box } from "@mui/material";
 import { SensorDataCard } from "../components/SensorDataCard";
 import { Line, Bar } from "react-chartjs-2";
+import { LineGraph } from "./LineGraph";
 
 export const Home: FC = () => {
   return (
-    <Box>
+    <Stack direction={"column"} spacing={3}>
       {/* Display the sensor data */}
-      <Box className="p-3 grid gap-2 grid-cols-3 mb-5">
+      <Box className="p-3 grid gap-2 grid-cols-3">
         <SensorDataCard
           className={"bg-blue-500 text-white font-bold"}
           value={200}
@@ -49,7 +50,7 @@ export const Home: FC = () => {
         </Box>
 
         {/* Pie chart */}
-        <Box className="h-12">
+        <Box className="grid gap-2 grid-cols-1">
           <Line
             title="power generated"
             data={{
@@ -66,6 +67,11 @@ export const Home: FC = () => {
           />
         </Box>
       </Box>
-    </Box>
+
+      {/* display the dropdown graph here */}
+      <Box className={"grid gap-2 grid-cols-1 p-4"}>
+        <LineGraph />
+      </Box>
+    </Stack>
   );
 };
