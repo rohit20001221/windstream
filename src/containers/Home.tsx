@@ -3,8 +3,12 @@ import { colors, Stack, Box } from "@mui/material";
 import { SensorDataCard } from "../components/SensorDataCard";
 import { Line, Bar } from "react-chartjs-2";
 import { LineGraph } from "./LineGraph";
+import { useGraphs } from "./Graph.hooks";
+import { renderGraph } from "./GraphUtil";
 
 export const Home: FC = () => {
+  const { graphs } = useGraphs();
+
   return (
     <Stack direction={"column"} spacing={3}>
       {/* Display the sensor data */}
@@ -70,7 +74,7 @@ export const Home: FC = () => {
 
       {/* display the dropdown graph here */}
       <Box className={"grid gap-2 grid-cols-1 p-4"}>
-        <LineGraph />
+        {graphs.map((graph) => renderGraph(graph))}
       </Box>
     </Stack>
   );
