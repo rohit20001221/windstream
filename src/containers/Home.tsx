@@ -2,7 +2,6 @@ import { FC } from "react";
 import { colors, Stack, Box } from "@mui/material";
 import { SensorDataCard } from "../components/SensorDataCard";
 import { Line, Bar } from "react-chartjs-2";
-import { LineGraph } from "./LineGraph";
 import { useGraphs } from "./Graph.hooks";
 import { renderGraph } from "./GraphUtil";
 
